@@ -15,7 +15,7 @@ const TagList = ({
     {feedTags.map(ft => (
       <FeedTag
         {...ft}
-        isSelected={selectedFeed.id === ft.id}
+        isSelected={selectedFeed && selectedFeed.id === ft.id}
         onFeedDelete={handleDeleteFeed}
         onFeedClick={handleSelectFeed}
         onFeedUpdate={handleUpdateFeed}

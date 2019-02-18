@@ -19,7 +19,7 @@ const rssParser = new RSSParser();
 const parseFeed = feedUrl => {
   let url = feedUrl;
   //Add proxy when working in development to resolve CORS issues
-  if (process.env.NODE_ENV === "123123") {
+  if (process.env.NODE_ENV !== "development") {
     const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
     url = `${CORS_PROXY}${feedUrl}`;
   }
