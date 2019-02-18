@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "af7ae505a9eed503f8b8e6982036873e",
-    "url": "/rss-dashboard/static/media/fontawesome-webfont.af7ae505.woff2"
+    "revision": "fee66e712a8a08eef5805a46892932ad",
+    "url": "/rss-dashboard/static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
-    "revision": "d9cc02c1f16d6fce421c",
+    "revision": "2c18c8912cb8393f3640",
     "url": "/rss-dashboard/static/css/main.bdfdf52f.chunk.css"
   },
   {
@@ -20,12 +20,12 @@ self.__precacheManifest = [
     "url": "/rss-dashboard/static/js/2.7d873e0b.chunk.js"
   },
   {
-    "revision": "d9cc02c1f16d6fce421c",
-    "url": "/rss-dashboard/static/js/main.d9cc02c1.chunk.js"
+    "revision": "2c18c8912cb8393f3640",
+    "url": "/rss-dashboard/static/js/main.2c18c891.chunk.js"
   },
   {
-    "revision": "fee66e712a8a08eef5805a46892932ad",
-    "url": "/rss-dashboard/static/media/fontawesome-webfont.fee66e71.woff"
+    "revision": "af7ae505a9eed503f8b8e6982036873e",
+    "url": "/rss-dashboard/static/media/fontawesome-webfont.af7ae505.woff2"
   },
   {
     "revision": "674f50d287a8c48dc19ba404d20fe713",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/rss-dashboard/static/css/2.7752cf7f.chunk.css"
   },
   {
-    "revision": "2c67738c61692d2f3b173a5dca49ac45",
+    "revision": "0f3f4001cf8ea7323d9ff420a6afe0df",
     "url": "/rss-dashboard/index.html"
   }
 ];
