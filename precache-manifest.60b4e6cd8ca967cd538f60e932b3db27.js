@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/rss-dashboard/static/media/fontawesome-webfont.af7ae505.woff2"
   },
   {
-    "revision": "ec43affe55125ca436f2",
+    "revision": "d9cc02c1f16d6fce421c",
     "url": "/rss-dashboard/static/css/main.bdfdf52f.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = [
     "url": "/rss-dashboard/static/js/2.7d873e0b.chunk.js"
   },
   {
-    "revision": "ec43affe55125ca436f2",
-    "url": "/rss-dashboard/static/js/main.ec43affe.chunk.js"
+    "revision": "d9cc02c1f16d6fce421c",
+    "url": "/rss-dashboard/static/js/main.d9cc02c1.chunk.js"
   },
   {
     "revision": "fee66e712a8a08eef5805a46892932ad",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/rss-dashboard/static/css/2.7752cf7f.chunk.css"
   },
   {
-    "revision": "50273b36f7bbcbccd62c76d0155463af",
+    "revision": "2c67738c61692d2f3b173a5dca49ac45",
     "url": "/rss-dashboard/index.html"
   }
 ];
