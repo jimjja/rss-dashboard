@@ -1,9 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 //Components
 import Author from "./author";
 import PublishDate from "./publishDate";
+
+//Types
+import FeedItemType from "../../types/feedItem";
 
 const titleStyle = {
   fontSize: 18,
@@ -45,23 +47,13 @@ const FeedItem = props => {
   );
 };
 
-// FeedItem.propTypes = {
-//   url: PropTypes.string,
-//   content: PropTypes.string,
-//   title: PropTypes.string.isRequired,
-//   pudDate: PropTypes.any,
-//   author: PropTypes.shape({
-//     name: PropTypes.string,
-//   }),
-//   contentSnippet: PropTypes.string,
-// }
+FeedItem.propTypes = FeedItemType;
 
-// FeedItem.defaultProps = {
-//   contentSnippet: '',
-//   url: '',
-//   content: '',
-//   author: null,
-//   pubDate: null,
-// }
+FeedItem.defaultProps = {
+  link: "",
+  content: "",
+  author: null,
+  pubDate: null
+};
 
 export default FeedItem;

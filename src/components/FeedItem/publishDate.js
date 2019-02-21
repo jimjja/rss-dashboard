@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 const datePublishedStyle = {
@@ -13,4 +13,7 @@ const PublishDate = ({ pubDate }) => (
   </p>
 );
 
+PublishDate.propTypes = {
+  pubDate: PropTypes.string.isRequired
+};
 export default PublishDate;

@@ -4,7 +4,7 @@ const feedTags = getRssFeeds();
 
 export default {
   rssFeed: null,
-  feedTags: feedTags,
+  feedTags,
   selectedFeed: feedTags[0],
   errorMessage: "",
   isLoadingFeed: false

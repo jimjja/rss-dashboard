@@ -24,82 +24,42 @@ const parseFeed = feedUrl => {
     url = `${CORS_PROXY}${feedUrl}`;
   }
 
-  return new Promise((resolve, reject) => {
-    return rssParser.parseURL(url, (error, feed) => {
+  return new Promise((resolve, reject) =>
+    rssParser.parseURL(url, (error, feed) => {
       if (error) {
-        let message = error.message || "Unexpected error occurred";
+        const message = error.message || "Unexpected error occurred";
         return reject(message);
       }
-      console.log(feed);
-      resolve(feed);
-    });
-  });
-};
-
-const generateTagFeed = (title, urlLink) => {
-  return {
-    url: urlLink,
-    name: title || urlLink
-  };
-};
-
-const selectFeedTag = tagId => {
-  return { type: SELECT_RSS_FEED_TAG, tagId };
-};
-
-const toggleIsLoadingFeed = isLoading => {
-  return { type: TOGGLE_IS_LOADING_FEED, isLoading };
-};
-
-const updateRssFeeds = feedTags => {
-  return { type: UPDATE_RSS_FEEDS, feedTags };
-};
-
-export const fetchFeed = feedUrl => dispatch => {
-  dispatch(toggleIsLoadingFeed(true));
-  parseFeed(feedUrl)
-    .then(feed => {
-      console.log(feed);
-      dispatch(toggleIsLoadingFeed(false));
-      dispatch(selectRssFeed(feed));
+      return resolve(feed);
     })
-    .catch(error => {
-      dispatch(toggleIsLoadingFeed(false));
-      return dispatch(addErrorMessgae(error));
-    });
+  );
 };
 
-export const addNewRssFeedDetails = urlLink => (dispatch, getState) => {
-  dispatch(toggleIsLoadingFeed(true));
-  parseFeed(urlLink)
-    .then(feed => {
-      dispatch(toggleIsLoadingFeed(false));
-      dispatch(selectRssFeed(feed));
-      const feedTag = generateTagFeed(feed.title, urlLink);
-      const feedTags = saveRssFeed(feedTag);
-      return dispatch(updateRssFeeds(feedTags));
-    })
-    .catch(error => {
-      dispatch(toggleIsLoadingFeed(false));
-      dispatch(addErrorMessgae(error));
-    });
-};
+const generateTagFeed = (title, urlLink) => ({
+  id: new Date().getTime(),
+  url: urlLink,
+  name: title || urlLink
+});
 
-export const selectRssFeed = rssFeed => {
-  return { type: SELECT_RSS_FEED, rssFeed };
-};
+const selectFeedTag = tagId => ({ type: SELECT_RSS_FEED_TAG, tagId });
 
-export const selectRssFeedTag = tagId => {
-  return selectFeedTag(tagId);
-};
+const toggleIsLoadingFeed = isLoading => ({
+  type: TOGGLE_IS_LOADING_FEED,
+  isLoading
+});
 
-export const addErrorMessgae = errorMessage => {
-  return { type: ADD_ERROR_MESSAGE, errorMessage };
-};
+const updateRssFeeds = feedTags => ({ type: UPDATE_RSS_FEEDS, feedTags });
 
-export const dismissErrorMessage = () => {
-  return { type: DISMISS_ERROR_MESSAGE };
-};
+export const selectRssFeed = rssFeed => ({ type: SELECT_RSS_FEED, rssFeed });
+
+export const selectRssFeedTag = tagId => selectFeedTag(tagId);
+
+export const addErrorMessgae = errorMessage => ({
+  type: ADD_ERROR_MESSAGE,
+  errorMessage
+});
+
+export const dismissErrorMessage = () => ({ type: DISMISS_ERROR_MESSAGE });
 
 export const deleteFeedTag = tagId => {
   const remainingTags = deleteRssFeed(tagId);
@@ -109,4 +69,34 @@ export const deleteFeedTag = tagId => {
 export const updateFeedTag = (tagId, newName) => {
   const remainingTags = updateRssFeed({ tagId, newName });
   return updateRssFeeds(remainingTags);
+};
+
+export const fetchFeed = feedUrl => dispatch => {
+  dispatch(toggleIsLoadingFeed(true));
+  parseFeed(feedUrl)
+    .then(feed => {
+      dispatch(toggleIsLoadingFeed(false));
+      dispatch(selectRssFeed(feed));
+    })
+    .catch(error => {
+      dispatch(toggleIsLoadingFeed(false));
+      return dispatch(addErrorMessgae(error));
+    });
+};
+
+export const addNewRssFeedDetails = urlLink => dispatch => {
+  dispatch(toggleIsLoadingFeed(true));
+  parseFeed(urlLink)
+    .then(feed => {
+      dispatch(toggleIsLoadingFeed(false));
+      dispatch(selectRssFeed(feed));
+      const feedTag = generateTagFeed(feed.title, urlLink);
+      const feedTags = saveRssFeed(feedTag);
+      dispatch(updateRssFeeds(feedTags));
+      return dispatch(selectFeedTag(feedTag.id));
+    })
+    .catch(error => {
+      dispatch(toggleIsLoadingFeed(false));
+      dispatch(addErrorMessgae(error));
+    });
 };

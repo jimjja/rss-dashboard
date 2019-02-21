@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const wrapperStyle = {
   background: "rebeccapurple",
@@ -18,5 +19,9 @@ const Header = ({ siteTitle }) => (
     <h1 style={headerStyle}>{siteTitle}</h1>
   </div>
 );
+
+Header.propTypes = {
+  siteTitle: PropTypes.string.isRequired
+};
 
 export default Header;

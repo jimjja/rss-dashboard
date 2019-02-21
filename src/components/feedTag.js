@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Icon from "./icon";
+import FeedTagType from "../types/feedTag";
 
 const nameStyle = {
   marginRight: ".3em"
 };
 const deleteBtnStyle = {};
 
-const feedTag = props => {
+const FeedTag = props => {
   const {
     url,
     isSelected,
@@ -66,6 +67,7 @@ const feedTag = props => {
       {!isEditMode && (
         <div onDoubleClick={toggleEditMode}>
           <span
+            role="button"
             onClick={() => {
               onFeedClick(id);
             }}
@@ -74,6 +76,7 @@ const feedTag = props => {
             {name}
           </span>
           <span
+            role="button"
             onClick={() => {
               onFeedDelete(id);
             }}
@@ -87,4 +90,15 @@ const feedTag = props => {
   );
 };
 
-export default feedTag;
+FeedTag.propTypes = FeedTagType;
+
+FeedTag.defaultProps = {
+  url: null,
+  isSelected: false,
+  name: null,
+  id: null,
+  onFeedDelete: null,
+  onFeedClick: null,
+  onFeedUpdate: null
+};
+export default FeedTag;

@@ -24,4 +24,20 @@ const TagList = ({
   </div>
 );
 
+TagList.propTypes = {
+  feedTags: PropTypes.arrayOf(PropTypes.node).isRequired,
+  handleDeleteFeed: PropTypes.func,
+  handleSelectFeed: PropTypes.func,
+  handleUpdateFeed: PropTypes.func,
+  selectedFeed: PropTypes.shape({
+    id: PropTypes.number
+  })
+};
+
+TagList.defaultProps = {
+  handleDeleteFeed: null,
+  handleSelectFeed: null,
+  handleUpdateFeed: null,
+  selectedFeed: null
+};
 export default TagList;

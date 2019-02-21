@@ -14,4 +14,7 @@ const FeedTitle = ({ title }) => (
   </div>
 );
 
+FeedTitle.propTypes = {
+  title: PropTypes.string.isRequired
+};
 export default FeedTitle;

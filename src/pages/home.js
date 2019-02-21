@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Layout from "../components/layout";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import Layout from "../components/layout";
 import {
   selectRssFeedTag,
   addNewRssFeedDetails,
@@ -64,7 +65,10 @@ const HomePage = props => {
             />
           )}
         </div>
-        <p>Error message: {props.errorMessage}</p>
+        <p>
+          Error message:
+          {props.errorMessage}
+        </p>
         <input
           type="text"
           value={feedUrl}
@@ -92,34 +96,54 @@ const mapStateToProps = ({
   errorMessage,
   selectedFeed,
   isLoadingFeed
-}) => {
-  return { rssFeed, errorMessage, feedTags, selectedFeed, isLoadingFeed };
+}) => ({
+  rssFeed,
+  errorMessage,
+  feedTags,
+  selectedFeed,
+  isLoadingFeed
+});
+
+const mapDispatchToProps = dispatch => ({
+  handleNewRssFeed: urlLink => {
+    dispatch(addNewRssFeedDetails(urlLink));
+  },
+  handleSelectRssFeedTag: tagId => {
+    dispatch(selectRssFeedTag(tagId));
+  },
+  handleErrorMsg: errorMessage => {
+    dispatch(addErrorMessgae(errorMessage));
+  },
+  handleRemoveErrorMsg: () => {
+    dispatch(dismissErrorMessage());
+  },
+  handleDeleteFeedTag: tagId => {
+    dispatch(deleteFeedTag(tagId));
+  },
+  handleUpdateFeedTag: (tagId, newName) => {
+    dispatch(updateFeedTag(tagId, newName));
+  },
+  handleGetRssFeed: urlLink => {
+    dispatch(fetchFeed(urlLink));
+  }
+});
+
+HomePage.propTypes = {
+  selectedFeed: PropTypes.node,
+  handleSelectRssFeedTag: PropTypes.func,
+  handleNewRssFeed: PropTypes.func,
+  handleGetRssFeed: PropTypes.func,
+  rssFeed: PropTypes.node,
+  isLoadingFeed: PropTypes.bool
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    handleNewRssFeed: urlLink => {
-      dispatch(addNewRssFeedDetails(urlLink));
-    },
-    handleSelectRssFeedTag: tagId => {
-      dispatch(selectRssFeedTag(tagId));
-    },
-    handleErrorMsg: errorMessage => {
-      dispatch(addErrorMessgae(errorMessage));
-    },
-    handleRemoveErrorMsg: () => {
-      dispatch(dismissErrorMessage());
-    },
-    handleDeleteFeedTag: tagId => {
-      dispatch(deleteFeedTag(tagId));
-    },
-    handleUpdateFeedTag: (tagId, newName) => {
-      dispatch(updateFeedTag(tagId, newName));
-    },
-    handleGetRssFeed: urlLink => {
-      dispatch(fetchFeed(urlLink));
-    }
-  };
+HomePage.defaultProps = {
+  selectedFeed: null,
+  handleSelectRssFeedTag: null,
+  handleNewRssFeed: null,
+  handleGetRssFeed: null,
+  rssFeed: null,
+  isLoadingFeed: null
 };
 
 const Connector = connect(

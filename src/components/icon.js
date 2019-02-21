@@ -17,12 +17,14 @@ Icon.defaultName = "Icon";
 Icon.propTypes = {
   name: PropTypes.string.isRequired,
   size: PropTypes.string,
-  spin: PropTypes.bool
+  spin: PropTypes.bool,
+  className: PropTypes.string
 };
 
 Icon.defaultProps = {
   spin: false,
-  size: "1x"
+  size: "1x",
+  className: ""
 };
 
 export default Icon;

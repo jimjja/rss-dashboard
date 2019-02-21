@@ -2,13 +2,11 @@ import { getItem, setItem } from "./localStorageSrv";
 
 const RSS_FEED_KEY = "rssFeeds";
 
-export const getRssFeeds = () => {
-  return getItem(RSS_FEED_KEY) || [];
-};
+export const getRssFeeds = () => getItem(RSS_FEED_KEY) || [];
 
-export const saveRssFeed = ({ name, url }) => {
+export const saveRssFeed = ({ id, name, url }) => {
   const currFeeds = getItem(RSS_FEED_KEY) || [];
-  currFeeds.push({ id: currFeeds.length + 1, name, url });
+  currFeeds.push({ id, name, url });
   setItem({ key: RSS_FEED_KEY, value: currFeeds });
   return currFeeds;
 };

@@ -1,6 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import FeedItem from "./FeedItem";
 import FeedTitle from "./feedTitle";
+import FeedItemType from "../types/feedItem";
 
 const listStyle = {
   border: "1px solid #ebedf0",
@@ -22,6 +24,10 @@ const FeedList = props => {
       )}
     </div>
   );
+};
+
+FeedList.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape(FeedItemType)).isRequired
 };
 
 export default FeedList;
