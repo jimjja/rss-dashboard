@@ -1,15 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-//Components
-import FeedTag from "./feedTag";
+// Components
+import FeedTag from './feedTag';
 
 const TagList = ({
   feedTags,
   handleDeleteFeed,
   handleSelectFeed,
   handleUpdateFeed,
-  selectedFeed
+  selectedFeed,
 }) => (
   <div>
     {feedTags.map(ft => (
@@ -30,14 +30,14 @@ TagList.propTypes = {
   handleSelectFeed: PropTypes.func,
   handleUpdateFeed: PropTypes.func,
   selectedFeed: PropTypes.shape({
-    id: PropTypes.number
-  })
+    id: PropTypes.number,
+  }),
 };
 
 TagList.defaultProps = {
   handleDeleteFeed: null,
   handleSelectFeed: null,
   handleUpdateFeed: null,
-  selectedFeed: null
+  selectedFeed: null,
 };
 export default TagList;

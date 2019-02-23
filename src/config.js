@@ -1,5 +1,5 @@
 export default {
   siteMetadata: {
-    title: "RSS Dashboard"
-  }
+    title: 'RSS Dashboard',
+  },
 };

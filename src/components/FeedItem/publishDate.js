@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const datePublishedStyle = {
   margin: 0,
-  display: "inline-block",
-  fontSize: 12
+  display: 'inline-block',
+  fontSize: 12,
 };
 
 const PublishDate = ({ pubDate }) => (
@@ -14,6 +14,6 @@ const PublishDate = ({ pubDate }) => (
 );
 
 PublishDate.propTypes = {
-  pubDate: PropTypes.string.isRequired
+  pubDate: PropTypes.string.isRequired,
 };
 export default PublishDate;

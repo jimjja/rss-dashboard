@@ -1,6 +1,6 @@
-import { getItem, setItem } from "./localStorageSrv";
+import { getItem, setItem } from './localStorageSrv';
 
-const RSS_FEED_KEY = "rssFeeds";
+const RSS_FEED_KEY = 'rssFeeds';
 
 export const getRssFeeds = () => getItem(RSS_FEED_KEY) || [];
 
@@ -11,7 +11,7 @@ export const saveRssFeed = ({ id, name, url }) => {
   return currFeeds;
 };
 
-export const deleteRssFeed = feedId => {
+export const deleteRssFeed = (feedId) => {
   const currFeeds = getItem(RSS_FEED_KEY) || [];
   if (currFeeds.length > 0) {
     const updatedFeeds = currFeeds.filter(f => f.id !== feedId);
@@ -29,7 +29,7 @@ export const updateRssFeed = ({ tagId, newName }) => {
     const feeds = [...currFeeds];
     const newFeedDetails = {
       ...feeds[feedIndex],
-      name: newName
+      name: newName,
     };
     feeds.splice(feedIndex, 1, newFeedDetails);
     setItem({ key: RSS_FEED_KEY, value: feeds });

@@ -1,18 +1,18 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Header from "./header";
-import config from "../config";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Header from './header';
+import config from '../config';
 
-import "./layout.css";
+import './layout.css';
 
 const Layout = ({ children }) => (
   <div>
     <Header siteTitle={config.siteMetadata.title} />
-    <div style={{ padding: "5em" }}>{children}</div>
+    <div style={{ padding: '5em' }}>{children}</div>
   </div>
 );
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 export default Layout;

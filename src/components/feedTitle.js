@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const titleStyle = {
-  border: "1px solid #ebedf0",
+  border: '1px solid #ebedf0',
   borderTop: 0,
   borderRight: 0,
-  borderLeft: 0
+  borderLeft: 0,
 };
 
 const FeedTitle = ({ title }) => (
@@ -15,6 +15,6 @@ const FeedTitle = ({ title }) => (
 );
 
 FeedTitle.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 export default FeedTitle;

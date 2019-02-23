@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import Layout from "../components/layout";
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import Layout from '../components/layout';
 import {
   selectRssFeedTag,
   addNewRssFeedDetails,
@@ -9,24 +9,28 @@ import {
   dismissErrorMessage,
   deleteFeedTag,
   updateFeedTag,
-  fetchFeed
-} from "../state/actions";
+  fetchFeed,
+} from '../state/actions';
+import FeedTagType from '../types/feedTag';
+// Components
+import FeedList from '../components/feedList';
+import TagList from '../components/tagList';
 
-//Components
-import FeedList from "../components/feedList";
-import TagList from "../components/tagList";
-
-const HomePage = props => {
+const HomePage = (props) => {
   const {
     selectedFeed,
     handleSelectRssFeedTag,
     handleNewRssFeed,
     handleGetRssFeed,
     rssFeed,
-    isLoadingFeed
+    isLoadingFeed,
+    feedTags,
+    handleDeleteFeedTag,
+    handleUpdateFeedTag,
+    errorMessage,
   } = props;
 
-  const [feedUrl, setFeedUrl] = useState("");
+  const [feedUrl, setFeedUrl] = useState('');
   useEffect(() => {
     if (selectedFeed) {
       handleGetRssFeed(selectedFeed.url);
@@ -42,7 +46,7 @@ const HomePage = props => {
 
   function handleFeedUrlChange(evt) {
     const {
-      target: { value }
+      target: { value },
     } = evt;
     setFeedUrl(value);
   }
@@ -55,77 +59,62 @@ const HomePage = props => {
     <Layout>
       <div>
         <div>
-          {props.feedTags && (
+          {feedTags && (
             <TagList
-              selectedFeed={props.selectedFeed}
-              handleDeleteFeed={props.handleDeleteFeedTag}
-              handleUpdateFeed={props.handleUpdateFeedTag}
+              selectedFeed={selectedFeed}
+              handleDeleteFeed={handleDeleteFeedTag}
+              handleUpdateFeed={handleUpdateFeedTag}
               handleSelectFeed={handleSelectFeed}
-              feedTags={props.feedTags}
+              feedTags={feedTags}
             />
           )}
         </div>
         <p>
           Error message:
-          {props.errorMessage}
+          {errorMessage}
         </p>
-        <input
-          type="text"
-          value={feedUrl}
-          onChange={handleFeedUrlChange}
-          placeholder="URL Link"
-        />
+        <input type="text" value={feedUrl} onChange={handleFeedUrlChange} placeholder="URL Link" />
         <button type="button" onClick={handleAddRssFeed}>
           Add Feed
         </button>
       </div>
-      <div>
-        {isLoadingFeed ? (
-          <div>Loading...</div>
-        ) : (
-          rssFeed && <FeedList {...rssFeed} />
-        )}
-      </div>
+      <div>{isLoadingFeed ? <div>Loading...</div> : rssFeed && <FeedList {...rssFeed} />}</div>
     </Layout>
   );
 };
 
 const mapStateToProps = ({
-  rssFeed,
-  feedTags,
-  errorMessage,
-  selectedFeed,
-  isLoadingFeed
+  rssFeed, feedTags, errorMessage, selectedFeed, isLoadingFeed,
 }) => ({
   rssFeed,
   errorMessage,
   feedTags,
   selectedFeed,
-  isLoadingFeed
+  isLoadingFeed,
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleNewRssFeed: urlLink => {
+  handleNewRssFeed: (urlLink) => {
     dispatch(addNewRssFeedDetails(urlLink));
   },
-  handleSelectRssFeedTag: tagId => {
+  handleSelectRssFeedTag: (tagId) => {
     dispatch(selectRssFeedTag(tagId));
   },
-  handleErrorMsg: errorMessage => {
+  handleErrorMsg: (errorMessage) => {
     dispatch(addErrorMessgae(errorMessage));
   },
   handleRemoveErrorMsg: () => {
     dispatch(dismissErrorMessage());
   },
-  handleDeleteFeedTag: tagId => {
+  handleDeleteFeedTag: (tagId) => {
     dispatch(deleteFeedTag(tagId));
   },
   handleUpdateFeedTag: (tagId, newName) => {
     dispatch(updateFeedTag(tagId, newName));
   },
-  handleGetRssFeed: urlLink => {
+  handleGetRssFeed: (urlLink) => {
     dispatch(fetchFeed(urlLink));
-  }
+  },
 });
 
 HomePage.propTypes = {
@@ -134,7 +123,11 @@ HomePage.propTypes = {
   handleNewRssFeed: PropTypes.func,
   handleGetRssFeed: PropTypes.func,
   rssFeed: PropTypes.node,
-  isLoadingFeed: PropTypes.bool
+  isLoadingFeed: PropTypes.bool,
+  feedTags: PropTypes.arrayOf(PropTypes.shape(FeedTagType)),
+  handleDeleteFeedTag: PropTypes.func,
+  handleUpdateFeedTag: PropTypes.func,
+  errorMessage: PropTypes.string,
 };
 
 HomePage.defaultProps = {
@@ -143,12 +136,12 @@ HomePage.defaultProps = {
   handleNewRssFeed: null,
   handleGetRssFeed: null,
   rssFeed: null,
-  isLoadingFeed: null
+  isLoadingFeed: null,
 };
 
 const Connector = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(HomePage);
 
 export { Connector as default, HomePage };

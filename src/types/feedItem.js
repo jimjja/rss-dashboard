@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 export default {
   link: PropTypes.string,
@@ -6,6 +6,6 @@ export default {
   title: PropTypes.string.isRequired,
   pubDate: PropTypes.string,
   author: PropTypes.shape({
-    name: PropTypes.string
-  })
+    name: PropTypes.string,
+  }),
 };

@@ -4,29 +4,28 @@ import {
   DISMISS_ERROR_MESSAGE,
   UPDATE_RSS_FEEDS,
   SELECT_RSS_FEED_TAG,
-  TOGGLE_IS_LOADING_FEED
-} from "./actionTypes";
-import initialState from "./initialState";
+  TOGGLE_IS_LOADING_FEED,
+} from './actionTypes';
+import initialState from './initialState';
 
 const addErrorMessage = (state, action) => {
   const { errorMessage } = action;
   const { rssFeed } = state;
   return Object.assign({}, state, {
     errorMessage,
-    rssFeed: errorMessage && errorMessage.length === 0 ? null : rssFeed
+    rssFeed: errorMessage && errorMessage.length === 0 ? null : rssFeed,
   });
 };
 
-const dismissErrorMessage = state =>
-  Object.assign({}, state, {
-    errorMessage: ""
-  });
+const dismissErrorMessage = state => Object.assign({}, state, {
+  errorMessage: '',
+});
 
 const toggleIsLoading = (state, action) => {
   const { isLoading } = action;
   const { isLoadingFeed } = state;
   return Object.assign({}, state, {
-    isLoadingFeed: isLoading === undefined ? !isLoadingFeed : isLoading
+    isLoadingFeed: isLoading === undefined ? !isLoadingFeed : isLoading,
   });
 };
 
@@ -34,7 +33,7 @@ const selectRssFeed = (state, action) => {
   const { rssFeed } = action;
   return Object.assign({}, state, {
     rssFeed,
-    errorMessage: ""
+    errorMessage: '',
   });
 };
 
@@ -43,14 +42,13 @@ const selectRssFeedTag = (state, action) => {
   const { feedTags } = state;
   const selectedIndex = feedTags.findIndex(ft => ft.id === tagId);
   return Object.assign({}, state, {
-    selectedFeed: feedTags[selectedIndex]
+    selectedFeed: feedTags[selectedIndex],
   });
 };
 
-const updateFeedTags = (state, action) =>
-  Object.assign({}, state, {
-    feedTags: action.feedTags
-  });
+const updateFeedTags = (state, action) => Object.assign({}, state, {
+  feedTags: action.feedTags,
+});
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {

@@ -1,3 +1,3 @@
-import FeedItem from "./feedItem";
+import FeedItem from './feedItem';
 
 export default FeedItem;

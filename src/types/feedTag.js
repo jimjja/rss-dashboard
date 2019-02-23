@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 export default {
   url: PropTypes.string,
@@ -7,5 +7,5 @@ export default {
   id: PropTypes.number,
   onFeedDelete: PropTypes.func,
   onFeedClick: PropTypes.func,
-  onFeedUpdate: PropTypes.func
+  onFeedUpdate: PropTypes.func,
 };

@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Provider } from "react-redux";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Provider } from 'react-redux';
 
-import createStore from "./configureStore";
+import createStore from './configureStore';
 
 const store = createStore();
 
@@ -11,6 +11,6 @@ function StoreProvider({ element }) {
 }
 
 StoreProvider.propTypes = {
-  element: PropTypes.node.isRequired
+  element: PropTypes.node.isRequired,
 };
 export default StoreProvider;
