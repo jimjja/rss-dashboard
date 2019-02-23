@@ -20,6 +20,7 @@
         "extensions": [".js", ".jsx"]
       }
     ],
+    "no-unused-vars": "warn",
     "react/forbid-prop-types": [0],
     "react/require-default-props": [0],
     "global-require": [0],
@@ -28,6 +29,7 @@
     "react/no-array-index-key": "warn",
     "jsx-a11y/click-events-have-key-events": "warn",
     "no-use-before-define": "warn",
-    "jsx-a11y/no-static-element-interactions": "warn"
+    "jsx-a11y/no-static-element-interactions": "warn",
+    "jsx-a11y/mouse-events-have-key-events": "offw"
   }
 }

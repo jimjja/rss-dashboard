@@ -15,6 +15,7 @@ import FeedTagType from '../types/feedTag';
 // Components
 import FeedList from '../components/feedList';
 import TagList from '../components/tagList';
+import ErrorMessage from '../components/errorMessage';
 
 const HomePage = (props) => {
   const {
@@ -69,10 +70,9 @@ const HomePage = (props) => {
             />
           )}
         </div>
-        <p>
-          Error message:
-          {errorMessage}
-        </p>
+        {errorMessage && !isLoadingFeed && (
+          <ErrorMessage label="Error message" text={errorMessage} />
+        )}
         <input type="text" value={feedUrl} onChange={handleFeedUrlChange} placeholder="URL Link" />
         <button type="button" onClick={handleAddRssFeed}>
           Add Feed

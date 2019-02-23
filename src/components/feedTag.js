@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Icon from './icon';
 import FeedTagType from '../types/feedTag';
 
@@ -6,33 +6,31 @@ const nameStyle = {
   marginRight: '.3em',
 };
 
-const btnCleanStyle = {
-  background: 'transparent',
-  border: 0,
-  color: 'white',
-  boxShadow: '0 0 0 0',
-  padding: 0,
-};
-
-const deleteBtnStyle = {};
-
 const FeedTag = (props) => {
   const {
     url, isSelected, name, id, onFeedDelete, onFeedClick, onFeedUpdate,
   } = props;
 
-  const [isEditMode, setEditMode] = useState(false);
   const [tagName, setTagName] = useState(name);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isEditMode, setEditMode] = useState(false);
+
+  useEffect(() => {
+    if (name !== tagName) {
+      setTagName(name);
+    }
+  }, [name]);
 
   const wrapperStyle = {
     border: '1px solid #6e2a9e',
     display: 'inline-block',
     padding: '5px',
     borderRadius: '30px',
-    background: `${isSelected ? '#9352ea' : '#6e2a9e'}`,
+    background: `${isSelected || isHovered ? '#9352ea' : '#6e2a9e'}`,
     color: 'white',
     fontSize: '14px',
     cursor: 'pointer',
+    margin: '5px',
   };
 
   function toggleEditMode() {
@@ -54,7 +52,17 @@ const FeedTag = (props) => {
   }
 
   return (
-    <div style={wrapperStyle} alt={url} id={id}>
+    <div
+      style={wrapperStyle}
+      title={url}
+      id={id}
+      onMouseOver={() => {
+        setIsHovered(true);
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+      }}
+    >
       {isEditMode && (
         <React.Fragment>
           <input type="text" value={tagName} onChange={handleNameChange} style={nameStyle} />
@@ -68,7 +76,7 @@ const FeedTag = (props) => {
             onClick={() => {
               onFeedClick(id);
             }}
-            style={{ ...btnCleanStyle, ...nameStyle }}
+            style={nameStyle}
           >
             {name}
           </span>
@@ -77,7 +85,6 @@ const FeedTag = (props) => {
             onClick={() => {
               onFeedDelete(id);
             }}
-            style={{ ...deleteBtnStyle, ...btnCleanStyle }}
           >
             <Icon name="times-circle" />
           </span>
