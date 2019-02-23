@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "fee66e712a8a08eef5805a46892932ad",
-    "url": "/rss-dashboard/static/media/fontawesome-webfont.fee66e71.woff"
+    "revision": "674f50d287a8c48dc19ba404d20fe713",
+    "url": "/rss-dashboard/static/media/fontawesome-webfont.674f50d2.eot"
   },
   {
-    "revision": "2c18c8912cb8393f3640",
+    "revision": "10e4c5ab9e651c9228d3",
     "url": "/rss-dashboard/static/css/main.bdfdf52f.chunk.css"
   },
   {
@@ -16,31 +16,31 @@ self.__precacheManifest = [
     "url": "/rss-dashboard/static/media/fontawesome-webfont.912ec66d.svg"
   },
   {
-    "revision": "7d873e0b7245389d1e1a",
-    "url": "/rss-dashboard/static/js/2.7d873e0b.chunk.js"
+    "revision": "9cdde87ad0a12edcaa67",
+    "url": "/rss-dashboard/static/js/2.9cdde87a.chunk.js"
   },
   {
-    "revision": "2c18c8912cb8393f3640",
-    "url": "/rss-dashboard/static/js/main.2c18c891.chunk.js"
+    "revision": "10e4c5ab9e651c9228d3",
+    "url": "/rss-dashboard/static/js/main.10e4c5ab.chunk.js"
   },
   {
     "revision": "af7ae505a9eed503f8b8e6982036873e",
     "url": "/rss-dashboard/static/media/fontawesome-webfont.af7ae505.woff2"
   },
   {
-    "revision": "674f50d287a8c48dc19ba404d20fe713",
-    "url": "/rss-dashboard/static/media/fontawesome-webfont.674f50d2.eot"
-  },
-  {
     "revision": "b06871f281fee6b241d60582ae9369b9",
     "url": "/rss-dashboard/static/media/fontawesome-webfont.b06871f2.ttf"
   },
   {
-    "revision": "7d873e0b7245389d1e1a",
+    "revision": "fee66e712a8a08eef5805a46892932ad",
+    "url": "/rss-dashboard/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  {
+    "revision": "9cdde87ad0a12edcaa67",
     "url": "/rss-dashboard/static/css/2.7752cf7f.chunk.css"
   },
   {
-    "revision": "0f3f4001cf8ea7323d9ff420a6afe0df",
+    "revision": "a09224287455999c360a11b965b387e5",
     "url": "/rss-dashboard/index.html"
   }
 ];
