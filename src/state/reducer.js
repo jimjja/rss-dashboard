@@ -15,7 +15,7 @@ const addErrorMessage = (state, action) => {
   const { rssFeed } = state;
   return Object.assign({}, state, {
     errorMessage,
-    rssFeed: errorMessage && errorMessage.length === 0 ? null : rssFeed,
+    rssFeed: errorMessage && errorMessage.length === 0 ? rssFeed : null,
   });
 };
 

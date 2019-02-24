@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Publish date component should match snapshot 1`] = `
+<p
+  style={
+    Object {
+      "display": "inline-block",
+      "fontSize": 12,
+      "margin": 0,
+    }
+  }
+>
+  2019-2-24
+</p>
+`;

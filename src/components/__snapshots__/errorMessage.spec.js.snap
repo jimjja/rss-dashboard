@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error Message component should match snapshot 1`] = `
+<p
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  <strong>
+    Error message
+    : 
+  </strong>
+  Failed to fetch
+</p>
+`;
+
+exports[`Error Message component should not render label 1`] = `
+<p
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  Failed to fetch
+</p>
+`;

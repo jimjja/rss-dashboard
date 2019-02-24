@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feed Item component should match snapshot 1`] = `
+<div
+  style={
+    Object {
+      "border": "1px solid #ebedf0",
+      "borderLeft": 0,
+      "borderRight": 0,
+      "borderTop": 0,
+      "color": "#000000a6",
+      "padding": "15px",
+    }
+  }
+>
+  <a
+    href="http://google.co.uk"
+    style={
+      Object {
+        "color": "#000000a6",
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "textDecoration": "none",
+      }
+    }
+  >
+    Example title
+  </a>
+  <div
+    style={
+      Object {
+        "margin": 0,
+      }
+    }
+  >
+    <h4
+      style={
+        Object {
+          "display": "inline-block",
+          "fontWeight": "normal",
+          "margin": "0 .5em 0 0",
+        }
+      }
+    >
+      Example author
+    </h4>
+    <p
+      style={
+        Object {
+          "display": "inline-block",
+          "fontSize": 12,
+          "margin": 0,
+        }
+      }
+    >
+      2019-2-24
+    </p>
+  </div>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<h1>I am HTML in string </h1>",
+      }
+    }
+    style={
+      Object {
+        "fontSize": 12,
+        "margin": "1em 0",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Feed Item component should not render author when no value 1`] = `
+<div
+  style={
+    Object {
+      "border": "1px solid #ebedf0",
+      "borderLeft": 0,
+      "borderRight": 0,
+      "borderTop": 0,
+      "color": "#000000a6",
+      "padding": "15px",
+    }
+  }
+>
+  <a
+    href="http://google.co.uk"
+    style={
+      Object {
+        "color": "#000000a6",
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "textDecoration": "none",
+      }
+    }
+  >
+    Example title
+  </a>
+  <div
+    style={
+      Object {
+        "margin": 0,
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "display": "inline-block",
+          "fontSize": 12,
+          "margin": 0,
+        }
+      }
+    >
+      2019-2-24
+    </p>
+  </div>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<h1>I am HTML in string </h1>",
+      }
+    }
+    style={
+      Object {
+        "fontSize": 12,
+        "margin": "1em 0",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Feed Item component should not render publish date when no value 1`] = `
+<div
+  style={
+    Object {
+      "border": "1px solid #ebedf0",
+      "borderLeft": 0,
+      "borderRight": 0,
+      "borderTop": 0,
+      "color": "#000000a6",
+      "padding": "15px",
+    }
+  }
+>
+  <a
+    href="http://google.co.uk"
+    style={
+      Object {
+        "color": "#000000a6",
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "textDecoration": "none",
+      }
+    }
+  >
+    Example title
+  </a>
+  <div
+    style={
+      Object {
+        "margin": 0,
+      }
+    }
+  />
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<h1>I am HTML in string </h1>",
+      }
+    }
+    style={
+      Object {
+        "fontSize": 12,
+        "margin": "1em 0",
+      }
+    }
+  />
+</div>
+`;

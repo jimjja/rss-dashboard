@@ -1,7 +1,22 @@
 import RSSParser from 'rss-parser';
 
-const rssParser = new RSSParser();
+let rssParser = null;
 
+/**
+ * Get RSS Parser
+ * Caches the parser if it is not created already instead of creating new instance every time
+ */
+function getRssParser() {
+  if (!rssParser) {
+    rssParser = new RSSParser();
+  }
+  return rssParser;
+}
+
+/**
+ * Parse RSS feed from XML to JSON
+ * @param {string} feedUrl - RSS feed url
+ */
 export const parseFeed = (feedUrl) => {
   let url = feedUrl;
   // Add proxy when working in development to resolve CORS issues
@@ -10,7 +25,8 @@ export const parseFeed = (feedUrl) => {
     url = `${CORS_PROXY}${feedUrl}`;
   }
 
-  return new Promise((resolve, reject) => rssParser.parseURL(url, (error, feed) => {
+  const parser = getRssParser();
+  return new Promise((resolve, reject) => parser.parseURL(url, (error, feed) => {
     if (error) {
       const message = error.message || 'Unexpected error occurred';
       return reject(message);
@@ -19,10 +35,18 @@ export const parseFeed = (feedUrl) => {
   }));
 };
 
+/**
+ * Geberate unique value based on current date and time
+ */
 export function generateUniqueId() {
   return new Date().getTime();
 }
 
+/**
+ * Generate RSS Feed tag
+ * @param {string} title - RSS Feed title
+ * @param {string} urlLink - RSS Feed url
+ */
 export const generateFeedTag = (title, urlLink) => ({
   id: generateUniqueId(),
   url: urlLink,

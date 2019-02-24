@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feed Tag component should match snapshot 1`] = `
+<div
+  id={1}
+  onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+  style={
+    Object {
+      "background": "#6e2a9e",
+      "border": "1px solid #6e2a9e",
+      "borderRadius": "30px",
+      "color": "white",
+      "cursor": "pointer",
+      "display": "inline-block",
+      "fontSize": "14px",
+      "margin": "5px",
+      "padding": "5px",
+    }
+  }
+  title="sample url"
+>
+  <div
+    onDoubleClick={[Function]}
+  >
+    <span
+      onClick={[Function]}
+      style={
+        Object {
+          "marginRight": ".3em",
+        }
+      }
+      type="button"
+    >
+      Feed Tag
+    </span>
+    <span
+      onClick={[Function]}
+      type="button"
+    >
+      <i
+        className="fa fa-times-circle fa-1x  "
+        name="times-circle"
+        size="1x"
+        spin={false}
+      />
+    </span>
+  </div>
+</div>
+`;

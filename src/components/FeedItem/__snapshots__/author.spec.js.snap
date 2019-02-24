@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Author component should match snapshot 1`] = `
+<h4
+  style={
+    Object {
+      "display": "inline-block",
+      "fontWeight": "normal",
+      "margin": "0 .5em 0 0",
+    }
+  }
+>
+  Example author
+</h4>
+`;

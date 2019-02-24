@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should match snapshot 1`] = `
+<div
+  style={
+    Object {
+      "background": "rebeccapurple",
+      "marginBottom": "1em",
+      "padding": "1em .5em",
+    }
+  }
+>
+  <h1
+    style={
+      Object {
+        "color": "white",
+        "margin": 0,
+        "textAlign": "left",
+        "textDecoration": "none",
+      }
+    }
+  >
+    RSS Dashboard
+  </h1>
+</div>
+`;

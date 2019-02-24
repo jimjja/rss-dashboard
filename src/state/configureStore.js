@@ -29,8 +29,10 @@ const persistToStorage = store => next => (action) => {
 };
 
 export default (preloadedState) => {
+  // Add all middlewares in array
   const middlewares = [thunkMiddleware, persistToStorage];
 
+  // Add logger when in development
   if (process.env.NODE_ENV === 'development') {
     middlewares.push(logger);
   }

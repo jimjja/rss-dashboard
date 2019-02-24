@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feed List component should match snapshot 1`] = `
+<div
+  style={
+    Object {
+      "border": "1px solid #ebedf0",
+      "borderRadius": 2,
+      "padding": "20px",
+      "position": "relative",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "border": "1px solid #ebedf0",
+        "borderLeft": 0,
+        "borderRight": 0,
+        "borderTop": 0,
+      }
+    }
+  >
+    <h2>
+      My feed title
+    </h2>
+  </div>
+  <div
+    style={
+      Object {
+        "border": "1px solid #ebedf0",
+        "borderLeft": 0,
+        "borderRight": 0,
+        "borderTop": 0,
+        "color": "#000000a6",
+        "padding": "15px",
+      }
+    }
+  >
+    <a
+      href="http://google.co.uk"
+      style={
+        Object {
+          "color": "#000000a6",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "textDecoration": "none",
+        }
+      }
+    >
+      Example title
+    </a>
+    <div
+      style={
+        Object {
+          "margin": 0,
+        }
+      }
+    >
+      <p
+        style={
+          Object {
+            "display": "inline-block",
+            "fontSize": 12,
+            "margin": 0,
+          }
+        }
+      >
+        2019-2-24
+      </p>
+    </div>
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h1>I am HTML in string </h1>",
+        }
+      }
+      style={
+        Object {
+          "fontSize": 12,
+          "margin": "1em 0",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "border": "1px solid #ebedf0",
+        "borderLeft": 0,
+        "borderRight": 0,
+        "borderTop": 0,
+        "color": "#000000a6",
+        "padding": "15px",
+      }
+    }
+  >
+    <a
+      href="http://youtube.com"
+      style={
+        Object {
+          "color": "#000000a6",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "textDecoration": "none",
+        }
+      }
+    >
+      RSS Item title
+    </a>
+    <div
+      style={
+        Object {
+          "margin": 0,
+        }
+      }
+    >
+      <p
+        style={
+          Object {
+            "display": "inline-block",
+            "fontSize": 12,
+            "margin": 0,
+          }
+        }
+      >
+        2019-2-24
+      </p>
+    </div>
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "I am text content",
+        }
+      }
+      style={
+        Object {
+          "fontSize": 12,
+          "margin": "1em 0",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Feed List component should render items not found message when no items are passed  1`] = `
+<div
+  style={
+    Object {
+      "border": "1px solid #ebedf0",
+      "borderRadius": 2,
+      "padding": "20px",
+      "position": "relative",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "border": "1px solid #ebedf0",
+        "borderLeft": 0,
+        "borderRight": 0,
+        "borderTop": 0,
+      }
+    }
+  >
+    <h2>
+      My feed title
+    </h2>
+  </div>
+  <div
+    style={Object {}}
+  >
+    No Items found
+  </div>
+</div>
+`;

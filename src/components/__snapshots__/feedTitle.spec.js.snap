@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feed Title component should match snapshot 1`] = `
+<div
+  style={
+    Object {
+      "border": "1px solid #ebedf0",
+      "borderLeft": 0,
+      "borderRight": 0,
+      "borderTop": 0,
+    }
+  }
+>
+  <h2>
+    Example title
+  </h2>
+</div>
+`;
